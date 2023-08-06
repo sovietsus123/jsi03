@@ -26,7 +26,7 @@ const product=products.map((item) => {
     return item.quantity + " chiếc " + item.name + " giá " + item.price * item.quantity + "$";
 });
 console.log(product)
-console.log("=> " + "Tổng hoá đơn: " + + (test[0] + test[1] + test[2] + test[3]))
+console.log("=> " + "Tổng hoá đơn: " + (test[0] + test[1] + test[2] + test[3]))
 //bai3
 let students = [
 	{ name: 'Alex', score: 6 },

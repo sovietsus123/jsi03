@@ -40,3 +40,4 @@ students.forEach((item) => {
     return test2.push(item.score)
 });
 console.log(Math.max.apply(Math, test2));
+

@@ -1,8 +1,63 @@
-//1 D
-//2 c
-//3 b
-//4 c
-//5 b
-//6 c
-//7 d
-//8 c
+const users = [
+    {
+      id: 1,
+      name: "Leanne Graham",
+      address: {
+        street: "Kulas Light",
+        city: "Gwenborough",
+      },
+      company: {
+        name: "Vingroup",
+      },
+    },
+    {
+      id: 2,
+      name: "Ervin Howell",
+      address: {
+        street: "Victor Plains",
+        city: "McKenziehaven",
+      },
+      company: {
+        name: "MindX",
+      },
+    },
+    {
+      id: 3,
+      name: "Clementine Bauch",
+      address: {
+        street: "Douglas Extension",
+        city: "McKenziehaven",
+      },
+      company: {
+        name: "MindX",
+      },
+    },
+    {
+      id: 4,
+      name: "Patricia Lebsack",
+      address: {
+        street: "Hoeger Mall",
+        city: "South Elvis",
+      },
+      company: {
+        name: "Vingroup",
+      },
+    },
+  ];
+
+  const mindx = []
+  users.forEach((item) => {
+    if(item.company.name == "MindX"){
+        mindx.push(item.name)
+    }
+  });
+  console.log(mindx)
+
+  const vin = []
+
+  users.forEach((item) => {
+    if(item.company.name == "Vingroup"){
+        vin.push(item.name)
+    }
+  })
+  console.log(vin[1])

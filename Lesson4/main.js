@@ -1,31 +1,10 @@
 let todoList = [
-  {
-    id: 1,
-    title: "Lam bai tap ve nha JSI03",
-    completed: false,
-  },
-  {
-    id: 2,
-    title: "Lam bai tap toan tren lop",
-    completed: false,
-  },
-  {
-    id: 3,
-    title: "Rua bat",
-    completed: false,
-  },
-  {
-    id: 4,
-    title: "Quet nha",
-    completed: true,
-  },
-  {
-    id: 5,
-    title: "Lau nha",
-    completed: false,
-  },
+
 ];
 
+const allbtn = document.getElementById("all-btn")
+const completedbtn = document.getElementById("completed-btn")
+const uncompletedbtn = document.getElementById("uncompleted-btn")
 const todoListElm = document.getElementById("todoList");
 const inputTodoElm = document.getElementById("inputTodo");
 const addBtn = document.getElementById("add-btn");
@@ -72,7 +51,7 @@ const handleAddTodo = () => {
   if (inputTodoElm.value === '') {
     alert('ban can phai nhap gi do');
   } else {
-    todoList.push({
+    todoList.unshift({
       id: Math.floor(Math.random() * 10000),
       title: inputTodoElm.value,
       completed: false,
@@ -83,18 +62,36 @@ const handleAddTodo = () => {
   } 
 }
 
-const saveLocalStorage = () => {
-  localStorage.setItem('todos', JSON.stringify(todoList));
-}
+// const saveLocalStorage = () => {
+//   localStorage.setItem('todos', JSON.stringify(todoList));
+// }
 
-const getLocalStorage = () => {
-  const todoListLocal = JSON.parse(localStorage.getItem('todos'));
-  if(todoListLocal) {
-    todoList = todoListLocal;
-  }
-  renderTodoList();
-}
+// const getLocalStorage = () => {
+//   const todoListLocal = JSON.parse(localStorage.getItem('todos'));
+//   if(todoListLocal) {
+//     todoList = todoListLocal;
+//   }
+//   renderTodoList();
+// }
 
 addBtn.addEventListener('click', handleAddTodo);
 
-getLocalStorage();
+//getLocalStorage();
+
+const getTodoList = () => {
+  fetch("https://jsonplaceholder.typicode.com/todos?userId=1").then((response) => {
+    return response.json();
+  }).then((data) => {
+    todoList = data;
+    
+    renderTodoList();
+  })
+
+}
+
+getTodoList();
+
+const completed = () => {
+  
+}
+completedbtn.addEventListener('click', completed);

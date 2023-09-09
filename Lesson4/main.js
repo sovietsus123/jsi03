@@ -88,9 +88,7 @@ const getTodoList = () => {
   })
 
 }
-
 getTodoList();
-
 const completed = () => {
   
 }

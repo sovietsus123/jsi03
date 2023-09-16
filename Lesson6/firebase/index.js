@@ -8,10 +8,15 @@ const name = () => {
     onAuthStateChanged(auth, (user) => {
         if (user) {
           const uid = user.uid;
-          welcometext.textContent = `Welcome ${user.email} to home page`;
+          if(user.email == null) {
+            welcometext.textContent = "Welcome anonymous to home page";
+          }else {
+            welcometext.textContent = `Welcome ${user.email} to home page`;
+          }
+          console.log(uid)
+          console.log(user.email)
           // ...
         } else {
-            alert("Please login first")
             window.location = "./login.html";
         }
       });

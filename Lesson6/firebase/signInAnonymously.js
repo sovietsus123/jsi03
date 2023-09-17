@@ -6,7 +6,6 @@ const signedInAnoymousbtn = document.getElementById('signedInanoymous-btn');
 const signedInAnoymous = () => {
     signInAnonymously(auth)
       .then(user => {
-            alert(' signed in as anonymous');
             window.location = "./index.html";
         })
       .catch(error => {

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Profile</h1>
+    <h2 id="fullname"></h2>
+    <h2>Avatar :</h2>
+    <img id="image" style="max-width: 300px; max-height: 300px;">
+    <br>
+    <button id="edit">Edit</button>
+
+    <script>
+        const editbtn = document.getElementById('edit');
+        editbtn.addEventListener('click', () => {window.location = "./profile-edit.html";});
+    </script>
+    <script type="module" src="./firebase/getprofile.js"></script>
+    <script type="module" src="./firebase/checklogin.js"></script>
+</body>
+</html>

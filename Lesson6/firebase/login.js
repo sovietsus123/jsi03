@@ -13,7 +13,15 @@ const handleLogin = () => {
         .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        alert("Sign in successfully");
+        const email = user.email;
+        const displayName = user.displayName;
+        const photoURL = user.photoURL;
+        const userProfile = {
+            email,
+            displayName,
+            photoURL
+        }
+        localStorage.setItem("currentUser", JSON.stringify(userProfile));
         window.location = './index.html';
         })
         .catch((error) => {

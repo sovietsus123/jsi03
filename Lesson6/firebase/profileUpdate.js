@@ -26,6 +26,7 @@ const handleGetProfile = () => {
         name.value = user.displayName;
         photo.value = user.photoURL;
 
+
       }
     });
 }

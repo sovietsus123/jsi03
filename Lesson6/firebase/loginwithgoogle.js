@@ -12,7 +12,15 @@ const handleLoginWithGoogle = () => {
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-    alert(`${user.email} sign in successfully`)
+    const email = user.email;
+    const displayName = user.displayName;
+    const photoURL = user.photoURL;
+    const userProfile = {
+        email,
+        displayName,
+        photoURL
+    }
+    localStorage.setItem("currentUser", JSON.stringify(userProfile));
     window.location = "./index.html";
     // IdP data available using getAdditionalUserInfo(result)
     // ...
